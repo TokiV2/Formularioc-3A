@@ -52,72 +52,16 @@
             padding: 60px 0 0;
         }
     </style>
-      <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-        import {
-          getFirestore,
-          collection,
-          addDoc
-        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-    
-        const firebaseConfig = {
-  apiKey: "AIzaSyDAr2ZBieSThOpB1rthS4F2OfNDNfVQsW4",
-  authDomain: "endereco-e4498.firebaseapp.com",
-  projectId: "endereco-e4498",
-  storageBucket: "endereco-e4498.firebasestorage.app",
-  messagingSenderId: "130986311932",
-  appId: "1:130986311932:web:3b4b69f1f6edd9c4f15779"
-};
-    
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-    
-        const form = document.getElementById("formulario");
-        const mensagem = document.getElementById("mensagem");
-    
-        form.addEventListener("submit", async (e) => {
-          e.preventDefault();
-    
-          const CEP = document.getElementById("CEP").value;
-            const ENDERECO = document.getElementById("ENDERECO").value;
-            const COMPLEMENTO = document.getElementById("COMPLEMENTO").value;
-            const CIDADE = document.getElementById("CIDADE").value;
-            const TEL1 = document.getElementById("TEL1").value;
-            const TEL2 = document.getElementById("TEL2").value;
-            const CELULAR = document.getElementById("CELULAR").value;
-            const FAX = document.getElementById("FAX").value;
-            const BAIRRO = document.getElementById("BAIRRO").value;
-            const COMPLE1 = document.getElementById("COMPLE1").value;
-            const COMPLE2 = document.getElementById("COMPLE2").value;
-            const COMPLE3 = document.getElementById("COMPLE3").value;
-            const COMPLE4 = document.getElementById("COMPLE4").value;
-    
-          try {
-            await addDoc(collection(db, "Endereco"), {
-                CEP,
-                    ENDERECO,
-                    COMPLEMENTO,
-                    CIDADE,
-                    TEL1,
-                    TEL2,
-                    CELULAR,
-                    FAX,
-                    BAIRRO,
-                    COMPLE1,
-                    COMPLE2,
-                    COMPLE3,
-                    COMPLE4
-            });
-    
-            mensagem.textContent = "Usuário salvo com sucesso.";
-            mensagem.style.color = "green";
-            form.reset();
-          } catch (error) {
-            mensagem.textContent = "Erro ao salvar: " + error.message;
-            mensagem.style.color = "red";
-          }
-        });
-      </script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"; import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"; const firebaseConfig = { apiKey: "AIzaSyDAr2ZBieSThOpB1rthS4F2OfNDNfVQsW4",
+        authDomain: "endereco-e4498.firebaseapp.com", projectId: "endereco-e4498", storageBucket: "endereco-e4498.firebasestorage.app", messagingSenderId: "130986311932", appId: "1:130986311932:web:3b4b69f1f6edd9c4f15779" }; const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app); const form = document.getElementById("formulario"); const mensagem = document.getElementById("mensagem"); form.addEventListener("submit", async (e) => { e.preventDefault(); const CEP = document.getElementById("CEP").value;
+        const ENDERECO = document.getElementById("ENDERECO").value; const COMPLEMENTO = document.getElementById("COMPLEMENTO").value; const CIDADE = document.getElementById("CIDADE").value; const TEL1 = document.getElementById("TEL1").value; const TEL2
+        = document.getElementById("TEL2").value; const CELULAR = document.getElementById("CELULAR").value; const FAX = document.getElementById("FAX").value; const BAIRRO = document.getElementById("BAIRRO").value; const COMPLE1 = document.getElementById("COMPLE1").value;
+        const COMPLE2 = document.getElementById("COMPLE2").value; const COMPLE3 = document.getElementById("COMPLE3").value; const COMPLE4 = document.getElementById("COMPLE4").value; try { await addDoc(collection(db, "Endereco"), { CEP, ENDERECO, COMPLEMENTO,
+        CIDADE, TEL1, TEL2, CELULAR, FAX, BAIRRO, COMPLE1, COMPLE2, COMPLE3, COMPLE4 }); mensagem.textContent = "Usuário salvo com sucesso."; mensagem.style.color = "green"; form.reset(); } catch (error) { mensagem.textContent = "Erro ao salvar: " + error.message;
+        mensagem.style.color = "red"; } });
+    </script>
 </head>
 
 <body>
@@ -139,7 +83,7 @@
                         </div>
                         <div id="bloco_a">
 
-                
+
                             <input type="text" minlength="12" placeholder="80525-000" id="CEP"><br>
                             <input type="text" daminlength="150" placeholder="rua baroxoque 259, cidadao pele" id="ENDERECO"><br>
                             <input type="text" minlength="350" placeholder="bloco de endereço cidadania" id="COMPLEMENTO"> <br>
